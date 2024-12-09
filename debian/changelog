@@ -1,3 +1,9 @@
+grub-live (3:6.3-1~local1) bookworm; urgency=medium
+
+  * Test build
+
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Mon, 09 Dec 2024 12:42:44 -0600
+
 grub-live (3:6.2-1) unstable; urgency=medium
 
   * New upstream version (local package).
