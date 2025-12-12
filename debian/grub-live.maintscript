@@ -9,3 +9,6 @@ rm_conffile /etc/grub.d/10_01_linux_live
 
 # Renamed to /etc/grub.d/10_60_linux_live_advanced
 rm_conffile /etc/grub.d/10_51_linux_live_advanced
+
+# Renamed to /etc/grub.d/10_70_linux_live_advanced
+rm_conffile /etc/grub.d/10_60_linux_live_advanced
