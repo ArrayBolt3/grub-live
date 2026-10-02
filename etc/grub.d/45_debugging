@@ -13,8 +13,12 @@ set -o errexit
 set -o nounset
 
 output() {
-   ## Write to stdout to add this to grub.cfg.
-   printf '%s\n' "## $*"
+   ## Write to stdout to add this to grub.cfg. A value may contain newlines:
+   ## grub-probe returns one device per line for a multi-device btrfs, so
+   ## GRUB_DEVICE and GRUB_DEVICE_BOOT can be multi-line. Prefix EVERY line with
+   ## '##' so each stays a grub.cfg comment -- a raw newline here would make the
+   ## continuation a bare command and grub.cfg would fail to parse.
+   printf '%s\n' "$*" | sed 's/^/## /'
    ## Write to stderr so it is shown in console and not added to the grub config file.
    printf '%s\n' "$*" >&2
 }
